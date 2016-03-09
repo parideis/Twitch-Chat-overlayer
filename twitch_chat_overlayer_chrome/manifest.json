@@ -1,9 +1,10 @@
 {
   "name": "Twitch Chat overlayer",
   "description": "Display the Chat over the Fullscreen Stream",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
   "background": {
     "scripts": ["background.js"],
