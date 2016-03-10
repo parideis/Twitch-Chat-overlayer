@@ -1,0 +1,25 @@
+.app-main.theatre #main_col {
+    width: auto !important;
+}
+
+.app-main.theatre #right_col {
+    background: #19191F none repeat scroll 0% 0% !important;
+}
+
+#right_col {
+    width: 340px !important;
+    background: transparent none repeat scroll 0% 0% !important;
+}
+
+.app-main.theatre .chat-container {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0% !important;
+    color: #8C8C9C !important;
+}
+
+.chat-container {
+    background: transparent none repeat scroll 0% 0% !important;
+}
+
+.ember-chat .chat-interface .textarea-contain textarea:focus {
+    background-color: rgba(0, 0, 0, 0.75);
+}
