@@ -22,12 +22,15 @@ Display Twitch Chat over Stream.
 ## Planned Features:
 - FireFox Version.
 - ~~Go to Fullscreen when pushing the button.~~ (Done in Version 1.1)
-- Make the Style toggle able (currently you have to refresh the page to remove the style).
+- ~~Make the Style toggle able (currently you have to refresh the page to remove the style).~~ (Done in Version 1.2)
+- Add an exit Button next to the Viewerlist Button.
 - Change the Style as you want (width, background transparency, position).
 
 ### Known Issues:
 - Transparency doesn't work with BTTV.
 
 ## Changelog:
+### Version 1.2:
++ Added: Toggle function: when pressing the Extension Icon again, the style will be reset.
 ### Version 1.1:
 + Added: Browser goes Fullscreen when pressing the Icon.
