@@ -30,6 +30,9 @@ Display Twitch Chat over Stream.
 - Transparency doesn't work with BTTV.
 
 ## Changelog:
+### Version 1.2b:
++ Fixed :focused chat box background reset.
+
 ### Version 1.2a:
 + Fixed position of chat toggle arrow.
 

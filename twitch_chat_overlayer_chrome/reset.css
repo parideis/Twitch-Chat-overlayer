@@ -25,5 +25,5 @@
 }
 
 .ember-chat .chat-interface .textarea-contain textarea:focus {
-    background-color: rgba(0, 0, 0, 0.75);
+    background: transparent none repeat scroll 0% 0% !important;
 }
