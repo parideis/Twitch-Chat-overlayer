@@ -30,7 +30,11 @@ Display Twitch Chat over Stream.
 - Transparency doesn't work with BTTV.
 
 ## Changelog:
+### Version 1.2a:
++ Fixed position of chat toggle arrow.
+
 ### Version 1.2:
 + Added: Toggle function: when pressing the Extension Icon again, the style will be reset.
+
 ### Version 1.1:
 + Added: Browser goes Fullscreen when pressing the Icon.

@@ -11,6 +11,10 @@
     background: transparent none repeat scroll 0% 0% !important;
 }
 
+#right_close {
+    right: 5px !important;
+}
+
 .app-main.theatre .chat-container {
     background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0% !important;
     color: #8C8C9C !important;
