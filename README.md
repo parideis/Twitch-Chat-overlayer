@@ -1,6 +1,9 @@
 # Twitch-Chat-overlayer
 Display Twitch Chat over Stream.
 
+## New! FireFox Version:
+https://addons.mozilla.org/de/firefox/addon/twitch_chat_overlayer/
+
 ## How to install:
 1. Download the Zip File.
 2. Extract twitch-chat-overlayer_chrome.
@@ -10,7 +13,7 @@ Display Twitch Chat over Stream.
 ## How to use the Extension:
 1. Set the Twitch Stream to Theater mode.
 2. Press the Extension Icon.
-3. ~~Press F11 to go Fullscreen.~~ (Not needed in Version 1.1)
+3. ~~Press F11 to go Fullscreen.~~ (Not needed in Version 1.1) !Not working anymore :/
 4. Press ESC or F11 again to exit Fullscreen.
 5. You can make the chat bigger by holding CTRL and pressing "+".
 
