@@ -1,7 +1,7 @@
-var toggled = false;
+var activated = false;
 // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(function(tab) {
-    if (toggled) { 
+    if (activated) { 
     	// Dectivate
     	toggled = false;
     	chrome.tabs.insertCSS(null, { file: "reset.css" });
@@ -9,7 +9,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     } 
     else { 
     	// Activate
-    	toggled = true; 
+    	activated = true; 
     	chrome.tabs.insertCSS(null, { file: "modified.css" });
     	chrome.windows.update(1, { state: "fullscreen" });
     };
