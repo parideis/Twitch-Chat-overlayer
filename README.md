@@ -1,8 +1,10 @@
 # Twitch-Chat-overlayer
 Display Twitch Chat over Stream.
 
-## New! FireFox Version:
+## Get the FireFox Version here:
 https://addons.mozilla.org/de/firefox/addon/twitch_chat_overlayer/
+
+## New Firefox Webextension added
 
 ## How to install:
 1. Download the Zip File.
