@@ -1,0 +1,40 @@
+{
+
+  "manifest_version": 2,
+  "name": "Twitch chat overlayer",
+  "version": "0.1.1",
+
+  "description": "Overlay Twitch Chat over your stream",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+
+  "permissions": [
+      "tabs",
+      "cookies",
+      "<all_urls>"
+  ],
+
+  "web_accessible_resources": [
+      "popup/images/bullseyes.png",
+      "popup/images/starring.png",
+      "popup/images/subtle.png",
+      "popup/images/tactilenoise.png",
+      "popup/images/triangles.png",
+      "popup/images/triangles2.png",
+      "popup/images/washi.png",
+      "popup/images/whitey.png"
+  ],
+
+  "browser_action": {
+    "default_icon": {
+     "32" : "icons/icon.png"
+    },
+    "default_title": "TCO popup",
+    "default_popup": "popup/popup.html"
+  },
+
+  "background": {
+    "scripts": ["background_scripts/background.js"]
+  }
+}

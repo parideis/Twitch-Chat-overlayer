@@ -1,0 +1,37 @@
+.app-main.theatre #main_col {
+	width: 100% !important;
+}
+.app-main.theatre #right_col{
+	background: transparent none repeat scroll 0% 0% !important;
+}
+#right_col {
+	width: 240px !important;
+	background: transparent none repeat scroll 0% 0% !important;
+}
+#right_close{
+	right: 240px;
+}
+.app-main.theatre .chat-container{
+background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0% !important;
+}
+.chat-lines{
+	color: #f1f1f1 !important;
+}
+.chat-container{
+background: transparent none repeat scroll 0% 0% !important;
+}
+.theatre .ember-chat .chat-interface .textarea-contain textarea{
+	background-color:transparent;
+}
+.ember-chat .chat-interface .textarea-contain textarea:focus{
+	background-color: rgba(0, 0, 0, 0.75);
+}
+.dark .special-message, .app-main.theatre .chat-container .special-message, .app-main.theatre .ember-chat-container .special-message, .force-dark .special-messag{
+	background-color: transparent !important;
+}
+.app-main.theatre .cn-content #player {
+	width: 100% !important;
+}
+#channel .player-column #player, #channel .player-column #video-1{
+	width: 100% !important;
+}
