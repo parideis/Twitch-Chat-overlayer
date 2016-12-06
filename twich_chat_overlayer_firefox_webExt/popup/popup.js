@@ -1,6 +1,4 @@
 /* initialise variables */
-var activate = document.querySelector('.activate button');
-var deactivate = document.querySelector('.deactivate button');
 var toggle = document.querySelector('.toggle');
 var reset = document.querySelector('.color-reset button');
 var cookieVal = { active: false};
@@ -14,10 +12,9 @@ function getCurrentWindow() {
 }
 
 /* Toogle TCO */
-toggle.onclick = function () {
+toggle.onclick = function toggle_tco() {
     getActiveTab().then((tabs) => {
     function toggleaction(cookie) {
-        //console.log(cookie.value);
         if (cookie == null || cookie.value[10] == "f"){
             /* Activate TCO */
             console.log("TCO activated");

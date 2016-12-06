@@ -13,21 +13,24 @@ html {
 }
 
 body {
-  width: 110px;
+  width: 120px;
   margin: 0 auto;
   height: inherit;
   overflow: hidden;
+  display: block;
+  position: relative;
 }
 
 .bg-container button {
   border: 0;
   color: #f1f1f1;
-  display: inline-block;
+  display:block;
   background-color: #6441a4;
-  width: 90%;
+  width: 100px;
   height: 30px;
-  margin: 8% auto 0 5%;
+  margin: 10px auto;
 }
+
 .position input{
   margin: 0;
 }
