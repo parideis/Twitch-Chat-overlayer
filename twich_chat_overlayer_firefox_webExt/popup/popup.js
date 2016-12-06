@@ -17,15 +17,15 @@ function getCurrentWindow() {
 toggle.onclick = function () {
     getActiveTab().then((tabs) => {
     function toggleaction(cookie) {
-        console.log(cookie.value);
-        if (cookie.value[10] == "t"){
+        //console.log(cookie.value);
+        if (cookie == null || cookie.value[10] == "f"){
             /* Activate TCO */
-            console.log("TCO deactivated");
-            deactivate_tco();
-        }else if (cookie.value[10] == "f"){
-            /* Deactivate TCO */
             console.log("TCO activated");
             activate_tco();
+        } else if (cookie.value[10] == "t"){
+            /* Deactivate TCO */
+            console.log("TCO deactivated");
+            deactivate_tco();
         }
     }
     /* Get Cookies */
@@ -88,7 +88,6 @@ function deactivate_tco() {
 });
 }
 /* Report cookie changes to the console
-
 browser.cookies.onChanged.addListener((changeInfo) => {
   console.log(`Cookie changed:\n
               * Cookie: ${JSON.stringify(changeInfo.cookie)}\n

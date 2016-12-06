@@ -33,6 +33,9 @@ background: transparent none repeat scroll 0% 0% !important;
 .app-main.theatre .cn-content #player {
 	width: 100% !important;
 }
+.app-main.theatre #player{
+	width: 100% !important;
+}
 #channel .player-column #player, #channel .player-column #video-1{
 	width: 100% !important;
 }

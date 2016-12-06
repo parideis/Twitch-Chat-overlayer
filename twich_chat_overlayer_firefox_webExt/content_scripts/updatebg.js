@@ -15,11 +15,13 @@ function updateBg(request, sender, sendResponse) {
         console.log("Theatre mode toggled");
         theatre.click();
       }
-  } else if(!(request.active)) {
+  }
+  /* Untoggle Theatre mode -> removed because you couldn't go in theatre mode without chat overlay
+  else if(!(request.active)) {
       if (player.getAttribute("data-theatre") === "true") {
           console.log("Theatre mode toggled");
           theatre.click();
       }
   }
-
+    */
 }

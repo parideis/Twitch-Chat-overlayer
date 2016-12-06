@@ -15,9 +15,6 @@
       "<all_urls>"
   ],
 
-  "web_accessible_resources": [
-  ],
-
   "browser_action": {
     "default_icon": {
      "32" : "icons/icon.png"

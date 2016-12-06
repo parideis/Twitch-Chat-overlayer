@@ -24,12 +24,12 @@ function cookieUpdate(tabId, changeInfo, tab) {
         console.log("Getting Cookies");
         console.log("Is the cookie active? " + cookie.value.valueOf());
         if (cookie.value[10] == "t"){
-          browser.tabs.removeCSS(null, {file: "/css/style.css"});
+          //browser.tabs.removeCSS(null, {file: "/css/style.css"});
           browser.tabs.insertCSS(null, {file: "/css/style.css"});
-          browser.tabs.sendMessage(tabs[0].id, {active: true});
+          //browser.tabs.sendMessage(tabs[0].id, {active: true});
         } else if((cookie.value[10] == "f")){
           browser.tabs.removeCSS(null, {file: "/css/style.css"});
-          browser.tabs.sendMessage(tabs[0].id, {active: false});
+          //browser.tabs.sendMessage(tabs[0].id, {active: false});
         }
         var cookieVal = JSON.parse(cookie.value);
         browser.tabs.sendMessage(tabs[0].id, {active: cookieVal.active});
