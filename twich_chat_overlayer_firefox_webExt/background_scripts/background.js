@@ -80,3 +80,15 @@ function toggle(tabId, changeInfo, tab) {
     });
 });
 }
+
+browser.notifications.create({
+    "type": "basic",
+    "iconUrl": browser.extension.getURL("icons/icon-48.png"),
+    "title": "New Twitch Chat Overlayer Version!",
+    "message": "0.1.2"
+});
+
+browser.notifications.onClicked.addListener(function(notificationId) {
+    console.log('Notification ' + notificationId + ' was clicked by the user');
+    browser.runtime.openOptionsPage();
+});
