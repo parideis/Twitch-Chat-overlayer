@@ -1,13 +1,14 @@
 /* Retrieve any previously set cookie and send to content script */
-
+var cookieVal = { active: false};
 browser.tabs.onUpdated.addListener(cookieUpdate);
 
 function getActiveTab() {
-  return browser.tabs.query({active: true, currentWindow: true});
+  return browser.tabs.query({currentWindow: true, active: true, url: "*://*.twitch.tv/*"});
 }
 
 function cookieUpdate(tabId, changeInfo, tab) {
   getActiveTab().then((tabs) => {
+      browser.pageAction.show(tabs[0].id);
     /* inject content script into current tab */
 
     browser.tabs.executeScript(null, {
@@ -44,6 +45,7 @@ if(command == "toggle-feature"){
 });
 
 function toggle(tabId, changeInfo, tab) {
+
     getActiveTab().then((tabs) => {
       /* inject content script into current tab */
 
@@ -56,11 +58,21 @@ function toggle(tabId, changeInfo, tab) {
         url: tabs[0].url,
         name: "bgpicker"
     });
+
     gettingCookies.then((cookie) => {
+        console.log(cookie);
+        if(cookie === null){
+            cookieVal.active = true;
+            browser.cookies.set({
+                url: tabs[0].url,
+                name: "bgpicker",
+                value: JSON.stringify(cookieVal)
+            })
+        }
         if(cookie) {
             console.log("Getting Cookies");
             console.log("Is the cookie active? " + cookie.value.valueOf());
-            var cookieVal = JSON.parse(cookie.value);
+            cookieVal = JSON.parse(cookie.value);
             if (cookie.value[10] == "t"){
                 browser.tabs.removeCSS(null, {file: "/css/style.css"});
                 cookieVal.active = false;
@@ -92,3 +104,28 @@ browser.notifications.onClicked.addListener(function(notificationId) {
     console.log('Notification ' + notificationId + ' was clicked by the user');
     browser.runtime.openOptionsPage();
 });
+
+var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
+gettingActiveTab.then((tabs) => {
+    browser.pageAction.show(tabs[0].id);
+});
+
+browser.pageAction.onClicked.addListener(function () {
+    console.log("pageAction clicked! ");
+    toggle();
+    console.log(querying.then(logTabs, onError));
+});
+
+function logTabs(tabs) {
+    for (tab of tabs) {
+        // tab.url requires the `tabs` permission
+        console.log(tab.url);
+    }
+}
+
+function onError(error) {
+    console.log(`Error: ${error}`);
+}
+
+var querying = browser.tabs.query({currentWindow: true, active: true, url: "*://*.twitch.tv/*"});
+querying.then(logTabs, onError);

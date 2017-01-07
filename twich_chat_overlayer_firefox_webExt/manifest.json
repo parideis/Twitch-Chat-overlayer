@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Twitch chat overlayer",
-  "version": "0.1.2b",
+  "version": "0.1.2rework",
 
   "description": "Overlay Twitch Chat on twitch.tv",
   "icons": {
@@ -24,6 +24,11 @@
     "browser_style": true,
     "default_title": "TCO popup",
     "default_popup": "popup/popup.html"
+  },
+
+  "page_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Chill out"
   },
 
   "options_ui": {
