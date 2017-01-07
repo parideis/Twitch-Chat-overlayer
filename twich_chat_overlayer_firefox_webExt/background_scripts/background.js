@@ -85,7 +85,7 @@ browser.notifications.create({
     "type": "basic",
     "iconUrl": browser.extension.getURL("icons/icon-48.png"),
     "title": "New Twitch Chat Overlayer Version!",
-    "message": "0.1.2"
+    "message": "0.1.2b: You now can disable the 'auto Fullscreen' feature in the settings page!"
 });
 
 browser.notifications.onClicked.addListener(function(notificationId) {

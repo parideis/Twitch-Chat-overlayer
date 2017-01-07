@@ -49,15 +49,20 @@ function activate_tco() {
     // Apply Style
     browser.tabs.insertCSS(null, {file: "/css/style.css"});
 
-    /* Set Fullscreen */
-    getCurrentWindow().then((currentWindow) => {
-        var updateInfo = {
-            state: "fullscreen"
-        };
+    // Get Auto Fullscreen preference
+    var gettingItem = browser.storage.local.get('afs');
+    gettingItem.then((res) => {
+        /* Set Fullscreen */
+        if(!res.afs){
+        getCurrentWindow().then((currentWindow) => {
+            var updateInfo = {
+                state: "fullscreen"
+            };
+        browser.windows.update(currentWindow.id, updateInfo);
+        });
+        }
+    });
 
-    browser.windows.update(currentWindow.id, updateInfo);
-
-  });
 
 }
 
@@ -84,3 +89,6 @@ function deactivate_tco() {
     browser.windows.update(currentWindow.id, updateInfo);
 });
 }
+
+
+
