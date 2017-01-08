@@ -1,9 +1,13 @@
 /* Retrieve any previously set cookie and send to content script */
-var cookieVal = { active: false};
+var cookieVal = { active: false };
 browser.tabs.onUpdated.addListener(cookieUpdate);
 
 function getActiveTab() {
   return browser.tabs.query({currentWindow: true, active: true, url: "*://*.twitch.tv/*"});
+}
+
+function getCurrentWindow() {
+    return browser.windows.getCurrent();
 }
 
 function cookieUpdate(tabId, changeInfo, tab) {
@@ -76,12 +80,35 @@ function toggle(tabId, changeInfo, tab) {
             if (cookie.value[10] == "t"){
                 browser.tabs.removeCSS(null, {file: "/css/style.css"});
                 cookieVal.active = false;
+
+                // Set Normal Window
+                getCurrentWindow().then((currentWindow) => {
+                    var updateInfo = {
+                        state: "normal"
+                    };
+
+                browser.windows.update(currentWindow.id, updateInfo);
+                });
             }else if((cookie.value[10] == "f")){
                 browser.tabs.insertCSS(null, {file: "/css/style.css"});
                 cookieVal.active = true;
+
+                // Get Auto Fullscreen preference
+                var gettingItem = browser.storage.local.get('afs');
+                gettingItem.then((res) => {
+                    /* Set Fullscreen */
+                    if(res.afs){
+                    getCurrentWindow().then((currentWindow) => {
+                        var updateInfo = {
+                            state: "fullscreen"
+                        };
+                    browser.windows.update(currentWindow.id, updateInfo);
+                });
+                }
+            });
             }
 
-            console.log("Cookie Value JSON "+cookieVal.active);
+            console.log("Cookie Value JSON "+ cookieVal.active);
             browser.cookies.set({
                 url: tabs[0].url,
                 name: "bgpicker",
@@ -92,13 +119,6 @@ function toggle(tabId, changeInfo, tab) {
     });
 });
 }
-
-browser.notifications.create({
-    "type": "basic",
-    "iconUrl": browser.extension.getURL("icons/icon-48.png"),
-    "title": "New Twitch Chat Overlayer Version!",
-    "message": "0.1.2b: You now can disable the 'auto Fullscreen' feature in the settings page!"
-});
 
 browser.notifications.onClicked.addListener(function(notificationId) {
     console.log('Notification ' + notificationId + ' was clicked by the user');
@@ -129,3 +149,22 @@ function onError(error) {
 
 var querying = browser.tabs.query({currentWindow: true, active: true, url: "*://*.twitch.tv/*"});
 querying.then(logTabs, onError);
+
+function handleInstalled(details) {
+    console.log(details.reason);
+    browser.notifications.create({
+        "type": "basic",
+        "iconUrl": browser.extension.getURL("icons/icon-48.png"),
+        "title": "New Twitch Chat Overlayer Version! 0.2.0",
+        "message": "TCO Icon is only shown on twitch.tv in the url bar. You can disable the 'auto Fullscreen' feature in the settings page! (Click here to go to the settings page)"
+    });
+
+    // Set Default Settings on first install
+    if(details.reason == "install"){
+        browser.storage.local.set({
+            afs: "on"
+        });
+    }
+}
+
+browser.runtime.onInstalled.addListener(handleInstalled);

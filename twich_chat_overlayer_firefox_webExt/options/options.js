@@ -1,4 +1,3 @@
-var defaultAfs = true;
 function saveOptions(e) {
     browser.storage.local.set({
         afs: document.querySelector("#afs").checked

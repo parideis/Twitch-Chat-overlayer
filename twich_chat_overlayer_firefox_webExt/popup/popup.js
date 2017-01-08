@@ -87,7 +87,7 @@ function deactivate_tco() {
         };
 
     browser.windows.update(currentWindow.id, updateInfo);
-});
+    });
 }
 
 
