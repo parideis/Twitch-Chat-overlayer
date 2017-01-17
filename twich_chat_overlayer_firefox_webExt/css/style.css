@@ -38,3 +38,20 @@ background: transparent none repeat scroll 0% 0% !important;
 #channel .player-column #player, #channel .player-column #video-1{
 	width: 100% !important;
 }
+
+/** BTTV FIX **/
+
+#chat_text_input,#chat_text_login,.ember-chat .chat-interface textarea {
+	background-color:rgba(0, 0, 0, 0.2) !important;
+	color:#D3D3D3;
+	border:solid 1px #333!important;
+	box-shadow:none;
+}
+
+.chat-container.dark .chat-interface, .ember-chat-container.dark .chat-interface,.ember-chat .chat-menu, #channel-prompt, .ember-chat .chat-messages,#main_col .content #broadcast_meta,#main_col #broadcast-meta,#main_col .archive_info,#main_col .content #broadcast_meta .profile-photo,#main_col #broadcast-meta .profile-photo, #main_col .content #broadcast_meta .image,#main_col #broadcast-meta .image, .chat-room .sticky-message,.app-main.theatre .chat-container .chat-header {
+	background-color:rgba(0, 0, 0, 0.25) !important;
+}
+
+.ember-chat .chat-interface textarea:focus{
+	background-color: rgba(0, 0, 0, 0.75) !important;
+}

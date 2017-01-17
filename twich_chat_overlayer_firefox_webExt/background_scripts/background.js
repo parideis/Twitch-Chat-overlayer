@@ -155,10 +155,12 @@ function handleInstalled(details) {
     browser.notifications.create({
         "type": "basic",
         "iconUrl": browser.extension.getURL("icons/icon-48.png"),
-        "title": "New Twitch Chat Overlayer Version! 0.2.0",
-        "message": "TCO Icon is only shown on twitch.tv in the url bar. You can disable the 'auto Fullscreen' feature in the settings page! (Click here to go to the settings page)"
+        "title": "New Twitch Chat Overlayer Version! 0.2.1",
+        "message": "Added BTTV Support!"
     });
-
+    browser.storage.local.set({
+        afs: "on"
+    });
     // Set Default Settings on first install
     if(details.reason == "install"){
         browser.storage.local.set({

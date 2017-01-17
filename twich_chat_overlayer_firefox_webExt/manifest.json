@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Twitch chat overlayer",
-  "version": "0.2.0",
+  "version": "0.2.1",
 
   "description": "Overlay Twitch Chat on twitch.tv",
   "icons": {
