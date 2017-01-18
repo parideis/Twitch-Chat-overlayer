@@ -2,8 +2,12 @@
 
   "manifest_version": 2,
   "name": "Twitch chat overlayer",
-  "version": "0.2.1",
-
+  "version": "0.2.3",
+  "applications": {
+    "gecko": {
+      "id": "@twitch_chat_overlayer"
+    }
+  },
   "description": "Overlay Twitch Chat on twitch.tv",
   "icons": {
     "48": "icons/icon-48.png"
@@ -22,6 +26,13 @@
     "default_title": "overlay twitch chat"
   },
 
+  "browser_action": {
+    "default_icon": {
+      "32" : "icons/icon.png"
+    },
+    "default_title": "TCO popup",
+    "default_popup": "popup/popup.html"
+  },
   "options_ui": {
     "page": "options/options.html"
   },

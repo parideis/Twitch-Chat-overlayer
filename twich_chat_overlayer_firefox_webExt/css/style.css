@@ -55,3 +55,13 @@ background: transparent none repeat scroll 0% 0% !important;
 .ember-chat .chat-interface textarea:focus{
 	background-color: rgba(0, 0, 0, 0.75) !important;
 }
+/*
+.chat-messages .chat-line:nth-child(2n){
+	background-color: rgba(0, 0, 0, .4) !important;
+}*/
+#chat_line_list .line:nth-child(2n),.chat-messages .chat-line:nth-child(2n) {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+.chat-lines .notice, .chat-line.admin.notice {
+	background-color: rgba(0 ,0, 255, 0.3); !important;
+}

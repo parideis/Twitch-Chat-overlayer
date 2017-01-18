@@ -155,7 +155,7 @@ function handleInstalled(details) {
     browser.notifications.create({
         "type": "basic",
         "iconUrl": browser.extension.getURL("icons/icon-48.png"),
-        "title": "New Twitch Chat Overlayer Version! 0.2.1",
+        "title": "New Twitch Chat Overlayer Version! 0.2.3",
         "message": "Added BTTV Support!"
     });
     browser.storage.local.set({
