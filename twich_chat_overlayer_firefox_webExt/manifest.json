@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Twitch chat overlayer",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "applications": {
     "gecko": {
       "id": "@twitch_chat_overlayer"

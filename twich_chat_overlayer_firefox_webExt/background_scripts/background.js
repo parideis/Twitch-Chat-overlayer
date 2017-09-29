@@ -26,8 +26,6 @@ function cookieUpdate(tabId, changeInfo, tab) {
     });
     gettingCookies.then((cookie) => {
       if(cookie) {
-        console.log("Getting Cookies");
-        console.log("Is the cookie active? " + cookie.value.valueOf());
         if (cookie.value[10] == "t"){
           browser.tabs.insertCSS(null, {file: "/css/style.css"});
         } else if((cookie.value[10] == "f")){
@@ -42,7 +40,6 @@ function cookieUpdate(tabId, changeInfo, tab) {
 
 
 browser.commands.onCommand.addListener((command) => {
-    console.log("onCommand event received for message: ", command);
 if(command == "toggle-feature"){
     toggle();
 }
@@ -64,7 +61,6 @@ function toggle(tabId, changeInfo, tab) {
     });
 
     gettingCookies.then((cookie) => {
-        console.log(cookie);
         if(cookie === null){
             cookieVal.active = true;
             browser.cookies.set({
@@ -74,8 +70,6 @@ function toggle(tabId, changeInfo, tab) {
             })
         }
         if(cookie) {
-            console.log("Getting Cookies");
-            console.log("Is the cookie active? " + cookie.value.valueOf());
             cookieVal = JSON.parse(cookie.value);
             if (cookie.value[10] == "t"){
                 browser.tabs.removeCSS(null, {file: "/css/style.css"});
@@ -108,7 +102,6 @@ function toggle(tabId, changeInfo, tab) {
             });
             }
 
-            console.log("Cookie Value JSON "+ cookieVal.active);
             browser.cookies.set({
                 url: tabs[0].url,
                 name: "bgpicker",
@@ -120,18 +113,12 @@ function toggle(tabId, changeInfo, tab) {
 });
 }
 
-browser.notifications.onClicked.addListener(function(notificationId) {
-    console.log('Notification ' + notificationId + ' was clicked by the user');
-    browser.runtime.openOptionsPage();
-});
-
 var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
 gettingActiveTab.then((tabs) => {
     browser.pageAction.show(tabs[0].id);
 });
 
 browser.pageAction.onClicked.addListener(function () {
-    console.log("pageAction clicked! ");
     toggle();
     console.log(querying.then(logTabs, onError));
 });
@@ -149,24 +136,3 @@ function onError(error) {
 
 var querying = browser.tabs.query({currentWindow: true, active: true, url: "*://*.twitch.tv/*"});
 querying.then(logTabs, onError);
-
-function handleInstalled(details) {
-    console.log(details.reason);
-    browser.notifications.create({
-        "type": "basic",
-        "iconUrl": browser.extension.getURL("icons/icon-48.png"),
-        "title": "New Twitch Chat Overlayer Version! 0.2.3",
-        "message": "Added BTTV Support!"
-    });
-    browser.storage.local.set({
-        afs: "on"
-    });
-    // Set Default Settings on first install
-    if(details.reason == "install"){
-        browser.storage.local.set({
-            afs: "on"
-        });
-    }
-}
-
-browser.runtime.onInstalled.addListener(handleInstalled);

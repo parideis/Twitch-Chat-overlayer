@@ -17,11 +17,9 @@ toggle.onclick = function toggle_tco() {
     function toggleaction(cookie) {
         if (cookie == null || cookie.value[10] == "f"){
             /* Activate TCO */
-            console.log("TCO activated");
             activate_tco();
         } else if (cookie.value[10] == "t"){
             /* Deactivate TCO */
-            console.log("TCO deactivated");
             deactivate_tco();
         }
     }

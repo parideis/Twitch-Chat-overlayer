@@ -1,67 +1,85 @@
 .app-main.theatre #main_col {
 	width: 100% !important;
 }
-.app-main.theatre #right_col{
+
+.app-main.theatre #right_col {
 	background: transparent none repeat scroll 0% 0% !important;
 }
+
 #right_col {
 	width: 240px !important;
 	background: transparent none repeat scroll 0% 0% !important;
 }
-#right_close{
+
+#right_close {
 	right: 240px;
 }
-.app-main.theatre .chat-container{
-background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0% !important;
+
+.app-main.theatre .chat-container {
+	background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0% !important;
 }
-.chat-lines{
+
+.chat-lines {
 	color: #f1f1f1 !important;
 }
-.chat-container{
-background: transparent none repeat scroll 0% 0% !important;
+
+.chat-container {
+	background: transparent none repeat scroll 0% 0% !important;
 }
-.theatre .ember-chat .chat-interface .textarea-contain textarea{
-	background-color:transparent;
+
+.theatre .ember-chat .chat-interface .textarea-contain textarea {
+	background-color: transparent;
 }
-.ember-chat .chat-interface .textarea-contain textarea:focus{
+
+.ember-chat .chat-interface .textarea-contain textarea:focus {
 	background-color: rgba(0, 0, 0, 0.75);
 }
-.dark .special-message, .app-main.theatre .chat-container .special-message, .app-main.theatre .ember-chat-container .special-message, .force-dark .special-messag{
+
+.dark .special-message, .app-main.theatre .chat-container .special-message, .app-main.theatre .ember-chat-container .special-message, .force-dark .special-messag {
 	background-color: transparent !important;
 }
+
 .app-main.theatre .cn-content #player {
 	width: 100% !important;
 }
-.app-main.theatre #player{
+
+.app-main.theatre #player {
 	width: 100% !important;
 }
-#channel .player-column #player, #channel .player-column #video-1{
+
+#channel .player-column #player, #channel .player-column #video-1 {
 	width: 100% !important;
 }
 
 /** BTTV FIX **/
-
-#chat_text_input,#chat_text_login,.ember-chat .chat-interface textarea {
-	background-color:rgba(0, 0, 0, 0.2) !important;
-	color:#D3D3D3;
-	border:solid 1px #333!important;
-	box-shadow:none;
+#chat_text_input, #chat_text_login, .ember-chat .chat-interface textarea {
+	background-color: rgba(0, 0, 0, 0.2) !important;
+	color: #D3D3D3;
+	border: solid 1px #333 !important;
+	box-shadow: none;
 }
 
-.chat-container.dark .chat-interface, .ember-chat-container.dark .chat-interface,.ember-chat .chat-menu, #channel-prompt, .ember-chat .chat-messages,#main_col .content #broadcast_meta,#main_col #broadcast-meta,#main_col .archive_info,#main_col .content #broadcast_meta .profile-photo,#main_col #broadcast-meta .profile-photo, #main_col .content #broadcast_meta .image,#main_col #broadcast-meta .image, .chat-room .sticky-message,.app-main.theatre .chat-container .chat-header {
-	background-color:rgba(0, 0, 0, 0.25) !important;
+.chat-container.dark .chat-interface, .ember-chat-container.dark .chat-interface, .ember-chat .chat-menu, #channel-prompt, .ember-chat .chat-messages, #main_col .content #broadcast_meta, #main_col #broadcast-meta, #main_col .archive_info, #main_col .content #broadcast_meta .profile-photo, #main_col #broadcast-meta .profile-photo, #main_col .content #broadcast_meta .image, #main_col #broadcast-meta .image, .chat-room .sticky-message, .app-main.theatre .chat-container .chat-header {
+	background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
-.ember-chat .chat-interface textarea:focus{
+.ember-chat .chat-interface textarea:focus {
 	background-color: rgba(0, 0, 0, 0.75) !important;
 }
-/*
-.chat-messages .chat-line:nth-child(2n){
-	background-color: rgba(0, 0, 0, .4) !important;
-}*/
-#chat_line_list .line:nth-child(2n),.chat-messages .chat-line:nth-child(2n) {
+
+#chat_line_list .line:nth-child(2n), .chat-messages .chat-line:nth-child(2n) {
 	background-color: rgba(0, 0, 0, 0.25);
 }
+
 .chat-lines .notice, .chat-line.admin.notice {
-	background-color: rgba(0 ,0, 255, 0.3); !important;
+	background-color: rgba(0, 0, 255, 0.3) !important;
+}
+
+/*Player full height fix*/
+.conversations-wrapper {
+	display: none !important;
+}
+
+#player {
+	height: 100% !important;
 }
